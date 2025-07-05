@@ -1,18 +1,21 @@
-.nice-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  font-family: Arial, sans-serif;
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  padding: 2rem;
 }
 
-.nice-table th,
-.nice-table td {
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  text-align: left;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.nice-table thead {
-  background-color: #007bff;
-  color: white;
+.box {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  max-width: 400px;
 }
