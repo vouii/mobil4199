@@ -491,7 +491,7 @@ const tableOrdinaire = {
 244:45503,
 244.5:45519,
 245:45532
-}
+};
 
 const tableSuperDiesel = {
 0.5:16,
@@ -984,7 +984,58 @@ const tableSuperDiesel = {
 244:20223,
 244.5:20231,
 245:20238
+};
+
+const config = [
+  { id: "sold-ordinaire", table: tableOrdinaire, input: "before-ordinaire", target: "after-ordinaire" },
+  { id: "sold-extra", table: tableOrdinaire, input: "before-extra", target: "after-extra" },
+  { id: "sold-supreme", table: tableSuperDiesel, input: "before-supreme", target: "after-supreme" },
+  { id: "sold-diesel", table: tableSuperDiesel, input: "before-diesel", target: "after-diesel" },
+];
+
+function lookup(table, value) {
+  value = Number(value);
+  return table.hasOwnProperty(value) ? table[value] : undefined;
 }
+
+function updateAfter(table, targetLitres) {
+  let closestKey = null;
+  let closestDiff = Infinity;
+
+  for (const cm in table) {
+    const litres = table[cm];
+    const diff = Math.abs(litres - targetLitres);
+
+    if (diff < closestDiff) {
+      closestDiff = diff;
+      closestKey = cm;
+    }
+  }
+
+  return closestKey;
+}
+
+config.forEach(({ id, table, input, target }) => {
+  const sold = document.getElementById(id);
+  const before = document.getElementById(input);
+  const after = document.getElementById(target);
+
+  if (sold && before) {
+    sold.addEventListener("input", function() {
+      if (id == "sold-ordinaire") {
+        const soldextra = document.getElementById("sold-extra");
+        after.value = before.value - updateAfter(table, ( sold.value / 2 ) + (soldextra.value / 2 ));
+      }
+      else if (id == "sold-extra") {
+        const soldordinaire = document.getElementById("sold-ordinaire");
+        after.value = before.value - updateAfter(table, ( sold.value / 2 ) + (soldordinaire.value / 2 ));
+      }
+      else {
+        after.value = before.value - updateAfter(table, sold.value);
+      }
+    });
+  }
+});
 
 
 // Canadian denominations and their values in dollars
