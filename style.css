@@ -1,26 +1,32 @@
-body{
-  background-color: #e3f2fd; /* Light blue background */
+body {
+  background-color: #e3f2fd;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 8px; /* smaller padding for mobile */
 }
+
 h1 {
   color: #1976d2; /* Deep blue */
   text-align: center;
+  font-size: 1.3em;
+  margin: 10px 0;
 }
+
 .container {
-  max-width: 800px;
+  max-width: 420px; /* smaller max width for phones */
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border: 2px solid #90caf9; /* Light blue border */
 }
+
 p {
   color: #424242; /* Darker gray */
   line-height: 1.6;
 }
+
 .section-title {
   margin-top: 20px;
   border-bottom: 2px solid #1976d2; /* Deep blue */
@@ -28,16 +34,25 @@ p {
   background-color: #bbdefb; /* Very light blue */
   border-radius: 3px 3px 0 0;
 }
+
+.section-title h2 {
+  color: #1976d2;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 6px 0;
+}
+
 .fuel-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 24px;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 16px;
 }
+
 .fuel-item {
   background: #e3f2fd;
-  border-radius: 10px;
-  padding: 20px 14px;
+  border-radius: 8px;
+  padding: 12px 6px;
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
   display: flex;
   flex-direction: column;
@@ -45,34 +60,40 @@ p {
   transition: box-shadow 0.2s, background 0.2s;
   border: 1.5px solid #90caf9;
 }
+
 .fuel-item:hover {
   box-shadow: 0 6px 18px rgba(25, 118, 210, 0.18);
   background: #bbdefb;
 }
+
 .fuel-item h3 {
   color: #1976d2;
   margin-bottom: 10px;
   font-size: 1.2em;
   letter-spacing: 1px;
 }
+
 .input-group {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 6px;
+  margin-top: 7px;
   width: 100%;
   justify-content: center;
 }
+
 .input-group label {
   color: #1976d2;
   font-weight: 500;
   min-width: unset;
   font-size: 0.95em;
 }
+
 .fuel-volume,
-.fuel-price {
-  width: 80px;
-  padding: 6px 8px;
+.fuel-price,
+.fuel-sold {
+  width: 70px;
+  padding: 4px 6px;
   border: 1.5px solid #90caf9;
   border-radius: 4px;
   font-size: 1em;
@@ -81,55 +102,56 @@ p {
   outline: none;
   transition: border-color 0.2s, background 0.2s;
 }
+
 .fuel-volume:focus,
 .fuel-price:focus {
   border-color: #1976d2;
   background: #e3f2fd;
 }
+
 .unit {
   color: #1976d2;
   font-weight: bold;
   margin-left: 2px;
 }
-.section-title h2 {
-  color: #1976d2;
-  font-size: 1.5em;
-  margin: 0;
-}
+
 .volume-group {
   flex-direction: row;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
 }
+
 .volume-label {
   color: #1976d2;
   font-size: 0.95em;
   font-weight: bold;
   margin-right: 8px;
 }
+
 .fuel-sold[readonly] {
   background: #f1f8e9;
   border: 1.5px solid #aed581;
   color: #33691e;
 }
-@media (max-width: 900px) {
+
+@media (min-width: 500px) {
+  .container {
+    max-width: 600px;
+    padding: 18px;
+  }
   .fuel-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
-  .fuel-grid {
-    grid-template-columns: 1fr;
-  }
+
+@media (min-width: 900px) {
   .container {
-    padding: 10px;
+    max-width: 800px;
+    padding: 20px;
   }
-  h1 {
-    font-size: 1.5em;
-  }
-  .section-title h2 {
-    font-size: 1.2em;
+  .fuel-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /* End of style.css */
