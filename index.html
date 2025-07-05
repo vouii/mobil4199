@@ -3,32 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Website</title>
+  <title>4199</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!--   <h1>Hello from GitHub Pages 👋</h1> -->
-  <table>
-    <thead>
-      <tr>
-        <th class="section-header" colspan="4">Litre Vendu</th>
-      </tr>
-      <tr>
-        <th>ORD</th>
-        <th>EXTRA</th>
-        <th>SUP</th>
-        <th>DIESEL</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td contenteditable="true" id="ORD"></td>
-        <td contenteditable="true" id="EXTRA"></td>
-        <td contenteditable="true" id="SUP"></td>
-        <td contenteditable="true" id="DIESEL"></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="container">
+    <h1>Welcome to 4199</h1>
+    <div class="section-title">
+      <h2>Vente Essence</h2>
+    </div>
+    <div class="fuel-grid">
+      <div class="fuel-item">
+        <h3>Ordinaire</h3>
+        <div class="input-group volume-group">
+          <span class="volume-label">Volume (CM):</span>
+          <input type="number" id="before-ordinaire" class="fuel-volume" min="0" placeholder="Avant" />
+          <input type="number" id="after-ordinaire" class="fuel-volume" min="0" placeholder="Après" readonly/>
+        </div>
+        <div class="input-group">
+          <label for="sold-ordinaire">Litre Vendu:</label>
+          <input type="number" id="sold-ordinaire" class="fuel-sold" readonly />
+        </div>
+      </div>
+      <div class="fuel-item">
+        <h3>Extra</h3>
+        <div class="nput-group volume-group">
+          <span class="volume-label">Volume (CM):</span>
+          <input type="number" id="before-extra" class="fuel-volume" min="0" placeholder="Avant" />
+          <input type="number" id="after-extra" class="fuel-volume" min="0" placeholder="Après" readonly/>
+        </div>
+        <div class="input-group">
+          <label for="sold-extra">Litre Vendu:</label>
+          <input type="number" id="sold-extra" class="fuel-sold" readonly />
+        </div>
+      </div>
+      <div class="fuel-item">
+        <h3>Supreme</h3>
+        <div class="input-group volume-group">
+          <span class="volume-label">Volume (CM):</span>
+          <input type="number" id="before-supreme" class="fuel-volume" min="0" placeholder="Avant" />
+          <input type="number" id="after-supreme" class="fuel-volume" min="0" placeholder="Après" readonly/>
+        </div>
+        <div class="input-group">
+          <label for="sold-supreme">Litre Vendu:</label>
+          <input type="number" id="sold-supreme" class="fuel-sold" readonly />
+        </div>
+      </div>
+      <div class="fuel-item">
+        <h3>Diesel</h3>
+        <div class="input-group volume-group">
+          <span class="volume-label">Volume (CM):</span>
+          <input type="number" id="before-diesel" class="fuel-volume" min="0" placeholder="Avant" />
+          <input type="number" id="after-diesel" class="fuel-volume" min="0" placeholder="Après" readonly/>
+        </div>
+        <div class="input-group">
+          <label for="sold-diesel">Litre Vendu:</label>
+          <input type="number" id="sold-diesel" class="fuel-sold" readonly />
+        </div>
+      </div>
+    </div>
+  </div>
     
   <script src="script.js"></script>
 </body>
